@@ -7,7 +7,7 @@ const Post = require('../models/post');
 
 router.get('/', (request, response, next) => {
     Post.find()
-      .where('_id').in()
+      // .where('_id').in()
       .sort({datePosted: 'descending'})
       .populate('user', 'fname lname' )
       .exec()

@@ -36,7 +36,7 @@ class Search extends Component {
 	render() {
         const userList = this.state.users.map(user => {
             return (
-                <li key={user._id} className="user">{user.fname} {user.lname} {user.email} <button onClick={(e) => this.followUser(user._id, e)}>Follow</button></li>
+                <li key={user._id} className="user">{user.fname} {user.lname} <button className="btn" onClick={(e) => this.followUser(user._id, e)}>Follow</button></li>
             );
         });
 

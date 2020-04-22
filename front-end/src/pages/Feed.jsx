@@ -21,6 +21,7 @@ class Feed extends Component {
             if (bookData[post.isbn]){
                 const postObj = {
                     _id: post._id,
+                    isbn: post.isbn,
                     user: post.user.fname + ' ' + post.user.lname,
                     title: bookData[post.isbn].title,
                     author: bookData[post.isbn].authors.map((author) => author.name).join(', '),
@@ -61,6 +62,7 @@ class Feed extends Component {
                         <h3 className="book-title">{post.title}</h3>
                         <h4 className="book-subtitle">{post.subtitle}</h4>
                         <p className="author">By {post.author}</p>
+                        <p className="isbn">ISBN: {post.isbn}</p>
                         <p className="rating"><strong>Rating:</strong> {post.rating}/5 stars</p>
                         <p className="description"><strong>Review:</strong> {post.description}</p>
                     </div>
