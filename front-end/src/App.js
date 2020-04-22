@@ -62,7 +62,7 @@ class App extends Component {
 				</main>
 				<footer>
 					<div className="container">
-						<p>&copy; 2020 Daniel Shamburger &middot; <a href="https://github.com">About</a> </p>
+						<p>Daniel Shamburger &middot; <a href="https://github.com">About</a> </p>
 					</div>		
 				</footer>
 			</AuthContext.Provider>
