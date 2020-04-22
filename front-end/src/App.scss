@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+$green: #13aa52;
+$darkGreen: #116149;
+$darkGrey: #444;
+$mediumGrey: #666;
+$lightGrey: #eee;
+
+html {
+	background: $lightGrey;
+	min-height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	min-height: 100%;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header, 
+main {
+	background: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+	width: 90%;
+	max-width: 800px;
+	margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.header-left {
+	a {
+		text-decoration: none;
+	}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+	padding: 40px 0;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.site-title {
+	color: $green;
+	text-decoration: none;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	.more {
+		font-weight: bold;
+	}
+}
+
+a {
+	color: $darkGreen;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+p {
+	line-height: 1.7;
+}
+
+.main-navigation {
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline;
+			margin: 0 0 0 5px;
+			a:not(.btn), 
+			button {
+				text-decoration: none;
+				color: $darkGrey;
+				padding: 2px 8px 0 8px;
+				font-size: 16px;
+				border: 0;
+				outline: 0;
+				background: transparent;
+				cursor: pointer;
+				&:hover,
+				&:focus {
+					color: $green;
+				}
+			}
+			.btn {
+				margin: 0 5px;
+			}
+		}
+	}
+}
+
+main {
+	padding: 10px 0 100px 0;
+}
+
+.home-hero {
+	background-image: url('./images/reading.svg');
+	background-position: bottom right;
+	background-size: 500px;
+	background-repeat: no-repeat;
+
+	padding: 50px 0 150px;
+	.hero-text {
+		font-size: 48px;
+		max-width: 400px;
+	}
+	p {
+		margin-top: 30px;
+	}
+}
+
+.page-title {
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	background: $green;
+	font-weight: bold;
+	padding: 13px 30px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 0;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.medium-grey {
+	color: $mediumGrey;
+}
+
+.center {
+	text-align: center;
+}
+
+form {
+	margin: 30px auto 50px;
+	max-width: 400px;
+	.form-control {
+		margin: 0 0 20px;
+	}
+	label {
+		display: block;
+		color: $darkGrey;
+		margin: 0 0 4px;
+	}
+	input,
+	textarea {
+		display: block;
+		width: 100%;
+		border: 1px solid darken($lightGrey, 10%);
+		border-radius: 5px;
+		font-size: 100%;
+		padding: 10px 7px;
+		box-sizing: border-box;
+	}
+	.form-actions {
+		margin-top: 30px;;
+		.btn {
+			width: 100%;
+		}
+	}
+}
+
+.post-list {
+	margin: 50px 0 0 0;
+	padding: 0;
+	list-style: none;
+	.post {
+		padding: 0 0 40px 0;
+		margin: 0 0 40px 0;
+		border-bottom: 1px solid darken($lightGrey, 10%);
+		display: flex;
+		.book-cover {
+			flex: 250px 0 0;
+			margin: 0 50px 0 0;
+			
+			img {
+				border: 10px solid $lightGrey;
+				width: 100%;
+				height: auto;
+			}
+		}
+		.post-text {
+			flex: calc(100% - 250px) 0;
+			.book-title {
+				margin-bottom: 10px;
+				font-size: 32px;
+			}
+			.book-subtitle {
+				font-weight: normal;
+				margin-top: 0;
+				color: $darkGrey;
+				font-size: 18px;
+			}
+			.author {
+				font-style: italic;
+				font-size: 15px;
+			}
+			.rating {
+				margin-top: 30px;
+			}
+		}
+			
+	}
+}
+
+footer {
+	padding: 20px 0;
+	color: $darkGrey;
+	text-align: center;
+	a {
+		color: $darkGrey;
+	}
 }

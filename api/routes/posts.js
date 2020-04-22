@@ -7,17 +7,13 @@ const Post = require('../models/post');
 
 router.get('/', (request, response, next) => {
     Post.find()
-      .populate('user', 'fname')
+      .where('_id').in()
+      .sort({datePosted: 'descending'})
+      .populate('user', 'fname lname' )
       .exec()
       .then(docs => {
         console.log(docs);
-        //   if (docs.length >= 0) {
         response.status(200).json(docs);
-        //   } else {
-        //       res.status(404).json({
-        //           message: 'No entries found'
-        //       });
-        //   }
       })
       .catch(err => {
         console.log(err);
@@ -30,6 +26,7 @@ router.get('/', (request, response, next) => {
 router.post('/', authenticate, (request, response, next) => {
     const post = new Post({
         _id: new mongoose.Types.ObjectId(),
+        datePosted: new Date().toISOString(),
         user: request.body.user,
         description: request.body.description,
         isbn: request.body.isbn,
@@ -52,14 +49,7 @@ router.post('/', authenticate, (request, response, next) => {
         });
 });
 
-router.get('/:postId', (req, res, next) => {
-    res.status(200).json({
-        message: 'Post details',
-        postId: req.params.postId
-    });
-});
-
-router.delete("/:postId", (request, response, next) => {
+router.delete("/:postId", authenticate, (request, response, next) => {
     const id = request.params.postId;
     console.log('recieved delete request');
     

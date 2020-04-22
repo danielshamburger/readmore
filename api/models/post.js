@@ -16,6 +16,10 @@ const postSchema = Schema({
     rating: {
         type: Number,
         required: true
+    },
+    datePosted: {
+        type: Date,
+        required: true
     }
 });
 
