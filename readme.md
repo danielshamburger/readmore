@@ -19,3 +19,4 @@ Endpoints include:
 - It would be cool to be able to search for books by title, but [ISBNdb] (https://isbndb.com/) costs moneys.
 - Implement "following" of other users.
 - Implement post and account deletion.
+- Book "wishlist"
